@@ -13,11 +13,16 @@
  *            LICENSE
  */
 #include "setuphooks.h"
-
+#include "crc.h"
+#include "hooker.h"
 
 void Setup_Hooks()
 {
 #ifdef __WATCOMC__
+    // Disable the DirectDraw based terrain caching system.
+    Make_Global<BOOL>(0x0050B760) = false; // IconCacheAllowed
+
+    Hook_Function(0x004D03E4, Calculate_CRC);
 #endif
 }
 

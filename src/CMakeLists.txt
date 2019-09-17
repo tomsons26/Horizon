@@ -7,6 +7,7 @@ set(GAMEENGINE_INCLUDES
 set(HOOKER_SRC hooker/dllmain.cpp hooker/hooker.cpp hooker/setupglobals.cpp hooker/setuphooks.cpp)
 
 set(GAMEENGINE_SRC
+    game/common/crc.cpp
     game/common/critsection.cpp
     game/debug/gameassert.cpp
     game/debug/gamelogging.cpp
