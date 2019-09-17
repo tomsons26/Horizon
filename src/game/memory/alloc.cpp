@@ -34,7 +34,7 @@
 using std::memset;
 
 #ifndef GAME_DLL
-memerrorhandler_t g_memoryError = nullptr; // Memory error handler function pointer.
+memerrorhandler_t g_MemoryError = nullptr; // Memory error handler function pointer.
 memexithandler_t g_MemoryErrorExit = nullptr;
 #endif
 

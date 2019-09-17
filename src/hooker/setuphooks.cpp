@@ -16,6 +16,8 @@
 #include "alloc.h"
 #include "crc.h"
 #include "hooker.h"
+#include "lcw.h"
+#include "surfacemonitor.h"
 
 #include <malloc.h>
 #include <stdarg.h>
@@ -36,7 +38,21 @@ void Setup_Hooks()
     Hook_Function(0x004D5FC0, &Free);
     Hook_Function(0x004D5FD0, &Resize_Alloc);
 
+    // crc.h
     Hook_Function(0x004D03E4, Calculate_CRC);
+
+    // lcw.h
+    Hook_Function(0x004D7FDC, LCW_Uncomp);
+
+    // surfacemonitor.h
+#ifdef BUILD_WITH_DDRAW
+    Hook_Function(0x004CC568, *SurfaceMonitorClass::Add_Surface);
+    Hook_Function(0x004CC594, *SurfaceMonitorClass::Remove_Surface);
+    Hook_Function(0x004CC5B4, *SurfaceMonitorClass::Got_Surface_Already);
+#endif
+    Hook_Function(0x004CC5DC, *SurfaceMonitorClass::Restore_Surfaces);
+    Hook_Function(0x004CC648, *SurfaceMonitorClass::Set_Surface_Focus);
+    Hook_Function(0x004CC64C, *SurfaceMonitorClass::Release);
 #endif
 }
 
@@ -47,6 +63,7 @@ void Setup_Hooks()
 
 #pragma message("Checking Type Sizes!")
 //
+ASSERT_SIZEOF(SurfaceMonitorClass, 0x58);
 //
 #pragma message("Done Checking Type Sizes!")
 #endif

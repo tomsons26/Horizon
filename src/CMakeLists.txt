@@ -2,16 +2,22 @@ set(GAMEENGINE_INCLUDES
     game
     game/common
     game/debug
+    game/gfx
     game/memory
 )
 
 set(HOOKER_SRC hooker/dllmain.cpp hooker/hooker.cpp hooker/setupglobals.cpp hooker/setuphooks.cpp)
 
 set(GAMEENGINE_SRC
+    game/common/buffer.cpp
     game/common/crc.cpp
     game/common/critsection.cpp
+    game/common/dipthong.cpp
+    game/common/lcw.cpp
     game/debug/gameassert.cpp
     game/debug/gamelogging.cpp
+    game/gfx/pal.cpp
+    game/gfx/surfacemonitor.cpp
     game/memory/alloc.cpp
     game/memory/newdel.cpp
 )
