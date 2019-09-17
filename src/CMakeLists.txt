@@ -14,6 +14,8 @@ set(GAMEENGINE_SRC
     game/common/critsection.cpp
     game/common/dipthong.cpp
     game/common/lcw.cpp
+    game/common/ostimer.cpp
+    game/common/timer.cpp
     game/debug/gameassert.cpp
     game/debug/gamelogging.cpp
     game/gfx/pal.cpp

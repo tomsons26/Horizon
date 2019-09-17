@@ -17,6 +17,7 @@
 #include "crc.h"
 #include "hooker.h"
 #include "lcw.h"
+#include "ostimer.h"
 #include "surfacemonitor.h"
 
 #include <malloc.h>
@@ -40,6 +41,9 @@ void Setup_Hooks()
 
     // crc.h
     Hook_Function(0x004D03E4, Calculate_CRC);
+
+    // ostimer.h
+    Hook_Function(0x004D02A4, &PlatformTimerClass::Timer_Callback);
 
     // lcw.h
     Hook_Function(0x004D7FDC, LCW_Uncomp);
