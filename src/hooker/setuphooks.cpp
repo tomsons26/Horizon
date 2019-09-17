@@ -13,14 +13,28 @@
  *            LICENSE
  */
 #include "setuphooks.h"
+#include "alloc.h"
 #include "crc.h"
 #include "hooker.h"
+
+#include <malloc.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void Setup_Hooks()
 {
 #ifdef __WATCOMC__
     // Disable the DirectDraw based terrain caching system.
     Make_Global<BOOL>(0x0050B760) = false; // IconCacheAllowed
+
+    // Hooking memory allocation functions.
+    Hook_Function(0x004D0531, &malloc);
+    Hook_Function(0x004C69B5, &free);
+    Hook_Function(0x004DDFC4, &realloc);
+    Hook_Function(0x004D5F70, &Alloc);
+    Hook_Function(0x004D5FC0, &Free);
+    Hook_Function(0x004D5FD0, &Resize_Alloc);
 
     Hook_Function(0x004D03E4, Calculate_CRC);
 #endif
