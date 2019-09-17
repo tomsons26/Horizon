@@ -14,9 +14,13 @@
  */
 #include "setuphooks.h"
 #include "alloc.h"
+#include "blitters.h"
 #include "crc.h"
+#include "gbuffer.h"
 #include "hooker.h"
 #include "lcw.h"
+#include "mouse.h"
+#include "mouseshape.h"
 #include "ostimer.h"
 #include "surfacemonitor.h"
 #include "xordelta.h"
@@ -43,11 +47,40 @@ void Setup_Hooks()
     // crc.h
     Hook_Function(0x004D03E4, Calculate_CRC);
 
+    // blitters.h
+    Hook_Function(0x004CE2E0, Buffer_Draw_Line);
+    Hook_Function(0x004CF638, Buffer_Fill_Rect);
+    Hook_Function(0x004CFB74, Buffer_Remap);
+    Hook_Function(0x004D88CC, Buffer_Get_Pixel);
+    Hook_Function(0x004D3844, Buffer_Put_Pixel);
+    Hook_Function(0x004CD338, Linear_Blit_To_Linear);
+    Hook_Function(0x004C9D38, Buffer_Clear);
+    Hook_Function(0x004D8984, Buffer_To_Buffer);
+    Hook_Function(0x004D8ADC, Buffer_To_Page);
+    Hook_Function(0x004D5254, Linear_Scale_To_Linear);
+
+    // gbuffer.h
+    Hook_Function(0x004C989C, *GraphicBufferClass::DD_Init);
+    Hook_Function(0x004C9970, *GraphicBufferClass::Init);
+    Hook_Function(0x004C99F4, *GraphicBufferClass::Un_Init);
+    Hook_Function(0x004C9B40, *GraphicBufferClass::Lock);
+    Hook_Function(0x004C9C50, *GraphicBufferClass::Unlock);
+    Hook_Function(0x004CFC60, *GraphicViewPortClass::Draw_Rect);
+
     // ostimer.h
     Hook_Function(0x004D02A4, &PlatformTimerClass::Timer_Callback);
 
     // lcw.h
     Hook_Function(0x004D7FDC, LCW_Uncomp);
+
+    // mouseshape.h
+    Hook_Function(0x004DBB1C, Mouse_Shadow_Buffer);
+    Hook_Function(0x004DBC61, Mouse_Draw);
+    Hook_Function(0x004DBD8F, Mouse_Set_Cursor);
+
+    // mouse.h
+    Hook_Function(0x004C8A48, *MouseClass::Low_Hide_Mouse);
+    Hook_Function(0x004C8B14, *MouseClass::Low_Show_Mouse);
 
     // xordelta.h
     Hook_Function(0x004D81AC, Apply_XOR_Delta_To_Page_Or_Viewport);
