@@ -4,6 +4,7 @@ set(GAMEENGINE_INCLUDES
     game/debug
     game/gfx
     game/memory
+    game/platform
 )
 
 set(HOOKER_SRC hooker/dllmain.cpp hooker/hooker.cpp hooker/setupglobals.cpp hooker/setuphooks.cpp)
@@ -21,10 +22,15 @@ set(GAMEENGINE_SRC
     game/common/xordelta.cpp
     game/debug/gameassert.cpp
     game/debug/gamelogging.cpp
+    game/gfx/blitters.cpp
+    game/gfx/gbuffer.cpp
+    game/gfx/mouseshape.cpp
     game/gfx/pal.cpp
     game/gfx/surfacemonitor.cpp
     game/memory/alloc.cpp
     game/memory/newdel.cpp
+    game/platform/eventhandler.cpp
+    game/platform/mouse.cpp
 )
 
 
