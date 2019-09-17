@@ -19,6 +19,7 @@
 #include "lcw.h"
 #include "ostimer.h"
 #include "surfacemonitor.h"
+#include "xordelta.h"
 
 #include <malloc.h>
 #include <stdarg.h>
@@ -47,6 +48,10 @@ void Setup_Hooks()
 
     // lcw.h
     Hook_Function(0x004D7FDC, LCW_Uncomp);
+
+    // xordelta.h
+    Hook_Function(0x004D81AC, Apply_XOR_Delta_To_Page_Or_Viewport);
+    Hook_Function(0x004D813C, Apply_XOR_Delta);
 
     // surfacemonitor.h
 #ifdef BUILD_WITH_DDRAW

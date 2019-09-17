@@ -18,6 +18,7 @@ set(GAMEENGINE_SRC
     game/common/ostimer.cpp
     game/common/timer.cpp
     game/common/vector.cpp
+    game/common/xordelta.cpp
     game/debug/gameassert.cpp
     game/debug/gamelogging.cpp
     game/gfx/pal.cpp
