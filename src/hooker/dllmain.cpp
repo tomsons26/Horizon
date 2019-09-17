@@ -13,11 +13,13 @@
  *            A full copy of the GNU General Public License can be found in
  *            LICENSE
  */
-#include "hooker.h"
 #include "gamedebug.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "hooker.h"
+#include "setuphooks.h"
+#include <cstdio>
+
+using std::printf;
+
 
 class StaticInitObject
 {
@@ -27,10 +29,6 @@ public:
 };
 
 StaticInitObject g_initHooks;
-
-void Setup_Hooks()
-{
-}
 
 StaticInitObject::StaticInitObject()
 {
