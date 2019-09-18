@@ -15,8 +15,8 @@
  */
 #pragma once
 
-#ifndef _FILE_H
-#define _FILE_H
+#ifndef BASEFILE_H
+#define BASEFILE_H
 
 #include "always.h"
 
@@ -58,4 +58,4 @@ public:
     int Tell() { return Seek(0, FS_SEEK_CURRENT); }
 };
 
-#endif // _FILE_H
+#endif // BASEFILE_H
