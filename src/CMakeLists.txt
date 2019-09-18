@@ -5,6 +5,7 @@ set(GAMEENGINE_INCLUDES
     game/gfx
     game/memory
     game/platform
+    game/ui
 )
 
 set(HOOKER_SRC hooker/dllmain.cpp hooker/hooker.cpp hooker/setupglobals.cpp hooker/setuphooks.cpp)
@@ -31,6 +32,7 @@ set(GAMEENGINE_SRC
     game/memory/newdel.cpp
     game/platform/eventhandler.cpp
     game/platform/mouse.cpp
+    game/ui/link.cpp
 )
 
 
