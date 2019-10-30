@@ -1,6 +1,13 @@
-# Horizon
+<p align="center">
+  <img width="600" src="https://i.imgur.com/RzbXiwp.png" alt="Horizon Logo">
+</p>
 
-An Open Source Re-Implementation of Command and Conquer (aka. Tiberian Dawn)
+<p align="center">
+  <a href="https://ci.appveyor.com/project/AssemblyArmarda/horizon/branch/develop"><img src="https://ci.appveyor.com/api/projects/status/2nh2beysn4gl0hoo/branch/develop?svg=true" alt="Build Status"></a>
+  <a href="https://travis-ci.org/TheAssemblyArmada/Horizon.svg?branch=develop"><img src="https://travis-ci.org/TheAssemblyArmada/Horizon.svg?branch=develop" alt="Build Status"></a>
+</p>
+
+An open source re-implementation of Command and Conquer (aka. Tiberian Dawn)
 
 This project is a bottom-up rewrite of Command and Conquer, a real time strategy game.
 
@@ -49,20 +56,20 @@ binary which will be in place until Horizon no longer relies on the original.
 
 Below is a list of similar projects and their respective original games:
 
+ * [Chronoshift](https://github.com/TheAssemblyArmada/Chronoshift) - C&C Red Alert
+ * [Thyme](https://github.com/TheAssemblyArmada/Thyme) - C&C Generals: Zero Hour
  * [OpenRCT2](https://github.com/OpenRCT2/OpenRCT2) - RollerCoaster Tycoon 2
  * [OpenTTD](https://www.openttd.org/) - Transport Tycoon Deluxe
  * [OpenMC2](https://github.com/LRFLEW/OpenMC2) - Midnight Club 2
  * [OpenDUNE](https://github.com/OpenDUNE/OpenDUNE) - Dune 2
  * [OpenFodder](https://github.com/OpenFodder/openfodder) - Cannon Fodder
  * [Devilution](https://github.com/diasurgical/devilution) - Diablo
- * [Chronoshift](https://github.com/TheAssemblyArmada/Chronoshift) - C&C Red Alert
- * [Thyme](https://github.com/TheAssemblyArmada/Thyme) - C&C Generals: Zero Hour
 
 There is also the [Wikipedia page for open source games](https://en.wikipedia.org/wiki/List_of_open-source_video_games).
 
 ## Contributing
 
-If you are interested in contributing to Horizon, you will need some knowledge of C++ as a minimum requirement. Join the developer chat listed below for more information on what else you will need such as the idc file for the current map of the binary.
+If you are interested in contributing to Horizon, you will need some knowledge of C++ as a minimum requirement. Join the developer chat listed below for more information and to chat with the developers.
 
 You can also check the wiki for more information.
 
