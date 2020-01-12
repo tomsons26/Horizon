@@ -16,7 +16,6 @@ compile_commands.json
 CPackConfig.cmake
 CPackSourceConfig.cmake
 *.spec
-*.ncb
 *.sdf
 *.suo
 *.sln
@@ -34,3 +33,4 @@ CPackSourceConfig.cmake
 *.tmp
 *.bak
 thumbs.db
+*.json

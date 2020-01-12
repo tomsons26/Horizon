@@ -30,6 +30,7 @@ set(GAMEENGINE_SRC
     game/gfx/surfacemonitor.cpp
     game/memory/alloc.cpp
     game/memory/newdel.cpp
+    game/platform/keyboard.cpp
     game/platform/eventhandler.cpp
     game/platform/mouse.cpp
     game/ui/link.cpp
